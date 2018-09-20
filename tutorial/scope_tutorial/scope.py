@@ -1,7 +1,7 @@
 
 def scope(a):
     b = 5
-    a = b
+    a += b
     return a
 
 if __name__ == "__main__":
