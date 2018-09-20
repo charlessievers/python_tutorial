@@ -41,4 +41,40 @@ This may be intuitive to you, but number was passed to our scope function.
 The scope function took the value and did not change the variable itself.
 The local scope of the function did not affect the global variable.
 
+Let's look at the scope class.
+```python
+class Scope:
+    def __init__(self):
+        self.scope = 'initialized'
 
+    def local_change(self):
+        scope = 'local_scope'
+
+    def change_scope(self):
+        self.scope = 'changed'
+
+    def print_scope(self):
+        print(self.scope)
+```
+Think of a class as a function which holds more functions. (Not always the case)
+Here you can see that the class Scope has four functions, class functions are called methods.
+__init__ is a reserved method name. This method will be called whenever an instance of Scope is initialized.
+The first argument in the initialization method is the current instance of the class, which we have called self.
+Any variables or objects within a class are called members. Within this class members have a `self.` in front of them.
+The first member `self.scope` is defined when the class in initialized.
+
+Now let's uncomment out the following block.
+```python
+#    new_scope = Scope()
+#    new_scope.print_scope()
+#
+#    new_scope.local_change()
+#    new_scope.print_scope()
+#
+#    new_scope.change_scope()
+#    new_scope.print_scope()
+```
+The first line we create an instance of Scope() that we have called new_scope.
+We will now use the print_scope method. To use a method, place `.method_name()` after the instantiated class.
+Now let's try to out the local_change method. Did the method change the scope member? Why not?
+Compare the local_change method to the change_scope method.
