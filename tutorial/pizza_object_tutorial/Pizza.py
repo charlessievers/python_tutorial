@@ -44,7 +44,7 @@ class Pizza:
             raise AttributeError('Zach says size has not been chosen')
         if self.size in self._sizes:
             self.price -= self._sizes[self.size]
-        Pizza.choose_size(size)
+        self.choose_size(size)
 
     def list_crusts(self):
         print('\nCrusts:')
@@ -70,7 +70,7 @@ class Pizza:
             raise AttributeError('Zach says crust has not been chosen')
         if self.crust == 'stuffed crust':
             self.price -= 2.00
-        Pizza.choose_crust(crust)
+        self.choose_crust(crust)
 
     def list_toppings(self):
         print('\nToppings:')
