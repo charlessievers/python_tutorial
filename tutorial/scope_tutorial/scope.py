@@ -1,25 +1,8 @@
 
-def scope(a):
+def hello(a):
     b = 5
     a += b
     return a
-
-if __name__ == "__main__":
-
-    number = 1
-    print(number)
-    new_number = scope(number)
-    print(number, new_number)
-
-#    new_scope = Scope()
-#    new_scope.print_scope()
-#
-#    new_scope.local_change()
-#    new_scope.print_scope()
-#
-#    new_scope.change_scope()
-#    new_scope.print_scope()
-#
 
 
 class Scope:
@@ -34,3 +17,25 @@ class Scope:
 
     def print_scope(self):
         print(self.scope)
+
+if __name__ == "__main__":
+
+    number = 1
+    print(number)
+    new_number = hello(number)
+    print(number, new_number)
+
+    new_scope = Scope()
+    new_scope.print_scope()
+
+    new_scope.local_change()
+    new_scope.print_scope()
+
+    new_scope.change_scope()
+    new_scope.print_scope()
+
+    d = Scope()
+    d.print_scope()
+
+    new_scope.print_scope()
+

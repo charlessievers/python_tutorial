@@ -101,10 +101,34 @@ class Pizza:
             else:
                 self.price += self._toppings_list[topping]
         else:
+            self.list_toppings()
             raise AttributeError('Zach says {} was Not Found'.format(topping))
 
-    # todo def remove_topping():
+    def remove_topping(self, topping, extra='no'):
+        if extra != 'yes' and extra != 'no':
+            raise AttributeError('Extra must be yes or no')
+        if topping in self.toppings:
+            if self.toppings[topping] == 'yes':
+                if extra == 'yes':
+                    self.price -= self._toppings_list[topping] * 2
+                    self.toppings.pop(topping, None)
+                else:
+                    self.price -= self._toppings_list[topping]
+                    self.toppings[topping] = 'no'
+            else:
+                if extra == 'no':
+                    self.price -= self._toppings_list[topping]
+                    self.toppings.pop(topping, None)
+                else:
+                    print('Extra {} was not set, but was still removed'.format(topping))
+                    self.price -= self._toppings_list[topping]
+                    self.toppings.pop(topping, None)
+        else:
+            raise AttributeError('That was not a topping!')
 
+    def what_toppings(self):
+        for topping in self.toppings:
+            print(topping)
 
 if __name__ == "__main__":
 
@@ -118,7 +142,7 @@ if __name__ == "__main__":
     pepperoni_pizza.choose_size('large')
     pepperoni_pizza.add_topping('pepperoni', 'yes')
 
-    # pepperoni_pizza.add_topping('spinach')
-    # pepperoni_pizza.remove_topping('spinach')
+    pepperoni_pizza.add_topping('spinach')
+    pepperoni_pizza.remove_topping('spinach')
 
     print('\nThe pepperoni pizza is ${0:.2f}'.format(pepperoni_pizza.price))
