@@ -34,8 +34,4 @@ if __name__ == "__main__":
     new_scope.change_scope()
     new_scope.print_scope()
 
-    d = Scope()
-    d.print_scope()
-
-    new_scope.print_scope()
 

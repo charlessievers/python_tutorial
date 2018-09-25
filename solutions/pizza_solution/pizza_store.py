@@ -77,16 +77,18 @@ class PizzaStore:
             print('Cheese is the default')
         else:
             self._topping()
+        while True:
+            if self._question('Would you like another topping? (yes/no)') is False:
+                break
+            else:
+                self._topping()
 
     def _topping(self):
         topping = input('What topping would you like?')
         while True:
             try:
                 self.pizza_order[self._pn].add_topping(topping)
-                if self._question('Would you like another topping? (yes/no)') is False:
-                    break
-                else:
-                    self._topping()
+                break
             except AttributeError:
                 topping = input('What topping would you like?')
 

@@ -4,20 +4,13 @@ from Pizza import Pizza
 class PizzaStore:
 
     def __init__(self):
-        self.pizza_list = []
+        return
 
     def add_pizza(self, pizza_name):
-        if isinstance(pizza_name, Pizza):
-            self.pizza_list.append(pizza_name)
-        else:
-            raise AttributeError()
+        return
 
     def get_cost(self):
-        self.cost = 0.00
-        for pizza in self.pizza_list:
-            self.cost += pizza.price
-        print('That will be ${0:.2f}'.format(self.cost))
-
+        return
 
 if __name__ == "__main__":
 

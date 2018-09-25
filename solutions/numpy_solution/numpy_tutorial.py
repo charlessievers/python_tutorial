@@ -25,7 +25,7 @@ def read_xyz(filename):
     if n_atoms != len(coordinates):
         raise ValueError("File says {} atoms but read {} points.".format(n_atoms, len(coordinates)))
 
-    return np.array(coordinates)
+    return atoms, np.array(coordinates)
 
 
 def fsd(coords):
@@ -54,6 +54,7 @@ def fast_fsd(coords):
 
 if __name__ == "__main__":
 
+    caffeine = []
     caffeine = read_xyz('/Users/charliesievers/PycharmProjects/Object_Oriented_Tutorial/tutorial/numpy_tutorial/caffeine.xyz')
-    print(fsd(caffeine))
-    print(fast_fsd(caffeine))
+    print(fsd(caffeine[1]))
+    print(fast_fsd(caffeine[1]))
